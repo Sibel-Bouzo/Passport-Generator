@@ -51,8 +51,8 @@ a {
 
 .container h1 {
   text-align: center;
-  font-size: 4rem;
-  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
   font-weight: normal;
   text-transform: uppercase;
   position: relative;
@@ -169,7 +169,7 @@ a {
   display: none;
 }
 .generated-passports-container #recent-passports ul li:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   padding-bottom: 10px;
   border-bottom: 1px solid #e7e7e7;
 }
