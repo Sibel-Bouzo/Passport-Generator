@@ -9,6 +9,7 @@ body {
   font-family: "Work Sans", sans-serif;
   background-color: #f8f8f8;
   color: #242a42;
+  font-size: 0.9rem;
 }
 
 :root {
@@ -50,8 +51,8 @@ a {
 
 .container h1 {
   text-align: center;
-  font-size: 40px;
-  margin-bottom: 60px;
+  font-size: 3rem;
+  margin-bottom: 5rem;
   font-weight: normal;
   text-transform: uppercase;
   position: relative;
@@ -108,7 +109,6 @@ a {
   margin: 10px 0 25px;
   padding: 15px;
   width: 100%;
-  font-size: 18px;
   border: none;
   background-color: #f7f7f75f;
   transition: var(--transition-duration);
@@ -120,7 +120,6 @@ a {
 .form-container button {
   padding: 15px;
   width: 100%;
-  font-size: 18px;
   font-weight: bold;
   border: none;
   border-radius: 5px;
@@ -147,7 +146,7 @@ a {
 }
 .generated-passports-container #result h3,
 .generated-passports-container #recent-passports h3 {
-  font-size: 22px;
+  font-size: 1.3rem;
   font-weight: 500;
   margin-bottom: 10px;
 }
