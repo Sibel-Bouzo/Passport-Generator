@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Create unique and customizable passports with our easy-to-use generator. Generate passport numbers, release dates, and more with my simple web app."
+    />
+    <meta
+      name="keywords"
+      content="passport generator, create passport, passport number, passport release date, web app, user-friendly, passport template"
+    />
+    <meta name="author" content="Sibel Bouzo" />
+    <meta property="og:title" content="Passport Generator" />
+    <meta
+      property="og:description"
+      content="Generate unique and customizable passports with our simple and user-friendly web application. Easily create passport numbers, dates, and more."
+    />
+    <meta property="og:image" content="/images/syrian-passport.webp" />
+
+    <title>Passport Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/favicon.ico"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Passport Generator</h1>
+      <div class="content">
+        <div class="form-container">
+          <form id="passport-form">
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="full-name" required />
+            <label for="id-card">ID Card Number:</label>
+            <input type="text" id="id-card" name="id-card" required />
+            <label for="birthdate">Birthdate:</label>
+            <input type="text" id="birthdate" name="birthdate" required />
+            <label for="mobile-number">Mobile Number:</label>
+            <input
+              type="tel"
+              id="mobile-number"
+              name="mobile-number"
+              pattern="[0-9]{10}"
+              required
+            />
+            <button type="submit">Generate</button>
+          </form>
+        </div>
+        <div class="generated-passports-container">
+          <div id="result">
+            <h3>Result</h3>
+            <div id="passport">
+              <img src="/images/syrian-passport.webp" alt="Passport Image" />
+              <div class="passport-info">
+                <p>Name: <span id="result-name"></span></p>
+                <p>
+                  Passport Number: <span id="result-passport-number"></span>
+                </p>
+                <p>Release Date: <span id="result-release-date"></span></p>
+              </div>
+            </div>
+          </div>
+          <div id="recent-passports">
+            <h3 id="recent-passports-header">Recent Passports</h3>
+            <ul id="recent-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
