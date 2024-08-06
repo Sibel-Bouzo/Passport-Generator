@@ -51,7 +51,7 @@ a {
 
 .container h1 {
   text-align: center;
-  font-size: 3rem;
+  font-size: xx-large;
   margin-bottom: 5rem;
   font-weight: normal;
   text-transform: uppercase;
@@ -107,7 +107,7 @@ a {
 .form-container input {
   display: block;
   margin: 10px 0 25px;
-  padding: 15px;
+  padding: 10px 15px;
   width: 100%;
   border: none;
   background-color: #f7f7f75f;
@@ -118,7 +118,7 @@ a {
   outline: none;
 }
 .form-container button {
-  padding: 15px;
+  padding: 10px;
   width: 100%;
   font-weight: bold;
   border: none;
