@@ -21,7 +21,10 @@ document
 
     // Generate random release date in the past
     const releaseDate = generateRandomDate();
-    const yearsAgo = calculateYearsAgo(releaseDate);
+    const { years, days } = calculateYearsAndDaysAgo(releaseDate);
+
+    // Determine the time ago text
+    const timeAgoText = years > 0 ? `${years} years ago` : `${days} days ago`;
 
     // Update result
     document.getElementById("result-name").textContent = fullName;
@@ -29,10 +32,10 @@ document
       passportNumber;
     document.getElementById(
       "result-release-date"
-    ).textContent = `${releaseDate} (${yearsAgo} years ago)`;
+    ).textContent = `${releaseDate} (${timeAgoText})`;
 
     // Add to recent passports list
-    addToRecentPassports(fullName, passportNumber, releaseDate, yearsAgo);
+    addToRecentPassports(fullName, passportNumber, releaseDate);
   });
 
 function capitalizeFullName(fullName) {
@@ -57,7 +60,7 @@ function generateRandomDate() {
   return date.toISOString().split("T")[0];
 }
 
-function calculateYearsAgo(date) {
+function calculateYearsAndDaysAgo(date) {
   const releaseDate = new Date(date);
   const currentDate = new Date();
 
@@ -73,17 +76,27 @@ function calculateYearsAgo(date) {
     yearsAgo--;
   }
 
-  return yearsAgo;
+  // Calculate the difference in days if yearsAgo is 0
+  let daysAgo = 0;
+  if (yearsAgo === 0) {
+    const timeDifference = currentDate - releaseDate;
+    daysAgo = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+  }
+
+  return { years: yearsAgo, days: daysAgo };
 }
 
 function addToRecentPassports(name, passportNumber, releaseDate) {
   const list = document.getElementById("recent-list");
-  const yearsAgo = calculateYearsAgo(releaseDate);
+  const { years, days } = calculateYearsAndDaysAgo(releaseDate);
+
+  // Determine the time ago text
+  const timeAgoText = years > 0 ? `${years} years ago` : `${days} days ago`;
 
   const item = document.createElement("li");
   item.innerHTML = `Name: ${name}<br> 
   Passport Number: ${passportNumber}<br>
-  Release Date: ${releaseDate} (${yearsAgo} years ago)`;
+  Release Date: ${releaseDate} (${timeAgoText})`;
   list.insertBefore(item, list.firstChild);
 
   if (list.children.length > 3) {
